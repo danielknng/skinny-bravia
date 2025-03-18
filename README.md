@@ -5,8 +5,8 @@
 
 The screenshots below show my launcher after debloating. The launcher was not downgraded or replaced. 
 
-![My Local Image](./images/screenshot.png "Example Image")
 ![My Local Image](./images/screenshot1.png "Example Image")
+![My Local Image](./images/screenshot.png "Example Image")
 
 ## ✅ Goal of the Guide  
 This guide explains how to remove unnecessary background services and bloatware from a Sony Bravia TV (Android TV) to improve performance, free up RAM, and create a clean, distraction-free user experience. 
@@ -31,10 +31,7 @@ This guide explains how to remove unnecessary background services and bloatware 
 ---
 
 ## ⚠️ Warnings  
-> ⚠️ **Root access is not required**, but some steps may alter factory settings.  
-> ⚠️ Disabling critical system apps can affect system stability.  
-> ⚠️ Some updates may fail after disabling certain services, even thought I didnt experience any issues.
-
+> ⚠️ **Root access is not required**, but some steps may alter functionality. Every change done should be reversible without a factory reset, but still be careful.
 ---
 
 ## 📋 Structure of the Guide  
@@ -273,6 +270,17 @@ adb shell settings put global animator_duration_scale 0.5
 adb shell cmd package install-existing <package_name>
 ```
 
+### Activate any app 
+```bash
+adb shell pm enable <package_name>
+```
+
+### I enabled play services, now my launcher has more tabs again
+If you enabled Google Play Services, the launcher will fetch data from their servers making other tabs visible again. There should be no content, but it can be disturbing. You can clear the launcher data again to remove the tabs. You can do this by command line or by going to the settings of the launcher.
+
+```bash
+adb shell pm clear com.google.android.tvlauncher
+```
 
 
 
