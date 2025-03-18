@@ -3,6 +3,9 @@
 
 ---
 
+![My Local Image](./images/screenshot.png "Example Image")
+![My Local Image](./images/screenshot1.png "Example Image")
+
 ## ✅ Goal of the Guide  
 This guide explains how to remove unnecessary background services and bloatware from a Sony Bravia TV (Android TV) to improve performance, free up RAM, and create a clean, distraction-free user experience.  
 
