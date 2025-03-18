@@ -1,97 +1,97 @@
-# 🛠️ Sony Bravia TV Debloating & Performance Optimization  
-*This guide will significantly debloat your Sony Bravia TV. After debloating, you'll still be able to use your installed apps, but some functionalities such as regular TV channels, accessibility options, and certain system features may be affected. Refer carefully to the provided tables to avoid disabling essential functions.*  
+# 🛠️ Sony Bravia TV Debloating & Performance Optimization
 
-
----
-
-The screenshots below show my launcher after debloating. The launcher was not downgraded or replaced. 
-
-![My Local Image](./images/screenshot1.png "Example Image")
-![My Local Image](./images/screenshot.png "Example Image")
-
-## ✅ Goal of the Guide  
-This guide explains how to remove unnecessary background services and bloatware from a Sony Bravia TV (Android TV) to improve performance, free up RAM, and create a clean, distraction-free user experience. 
-
----
-## 🏆 Benefits of Debloating  
-- ✔️ More available RAM → Faster app loading  
-- ✔️ Improved UI responsiveness  
-- ✔️ Less background activity → Reduced network and CPU load  
-- ✔️ Customized launcher without ads or unnecessary content  
----
-
-## 🔎 Device Requirements  
-- Sony Bravia TV with **Android TV** (tested with Android 9 Pie)  
-- Active network connection (Wi-Fi or LAN)  
-- Computer with **ADB (Android Debug Bridge)** installed  
-- Basic knowledge of command-line interfaces  
-
-## 📝 Prerequisites
-- The device is already set-up and you have all apps you need installed from Google Play Store. This is neccessary because we will disable Google Play Services and Google Play Store.You can enable it again if you need to.  
+This guide will help you effectively remove unnecessary apps and services ("bloatware") from your Sony Bravia Android TV, significantly improving system performance. After completing the debloating process, your TV will remain fully functional with installed apps, though some built-in features like standard TV channels and accessibility services might be impacted. Carefully review each step to avoid disabling functions you require.
 
 ---
 
-## ⚠️ Warnings  
-> ⚠️ **Root access is not required**, but some steps may alter functionality. Every change done should be reversible without a factory reset, but still be careful.
----
+## ✅ Goals
 
-## 📋 Structure of the Guide  
-The guide is divided into the following sections:  
-
-1. [Preparation](#preparation)  
-2. [Set Up ADB Access](#set-up-adb-access)  
-3. [List Installed Apps](#list-installed-apps)  
-4. [Identify and Remove Bloatware](#identify-and-remove-bloatware)  
-5. [Customize the Launcher](#customize-the-launcher)  
-6. [Prevent Automatic Background Start](#prevent-automatic-background-start)  
-7. [Optimize RAM and CPU Usage](#optimize-ram-and-cpu-usage)  
-8. [Troubleshooting and Reverting Changes](#troubleshooting-and-reverting-changes)  
+- Remove unnecessary background processes
+- Free up RAM for better performance
+- Achieve a clean, distraction-free user experience
 
 ---
 
-## 1. 🚀 Preparation  
-Before starting, make sure to:  
-- Connect the TV to the same Wi-Fi network as your computer (or use a USB cable).  
-- Enable **Developer Options** on your TV:  
-    - Go to **Settings → Device Preferences → About**  
-    - Tap **Build Number** 7 times until "Developer Mode Enabled" appears.  
+## 🏆 Benefits
 
-- Enable **ADB Debugging** on your TV:
-    - Go to **Settings → Device Preferences → Developer Options**  
-    - Enable **Network Debugging**
+- Faster application load times
+- Enhanced UI responsiveness
+- Reduced CPU and network usage
+- Ad-free and clutter-free launcher
 
 ---
 
-## 2. 🌐 Set Up ADB Access  
-### ➡️ Install ADB  
-1. Install ADB on your computer (if not installed):  
-    - **Windows:**  
-      Download the platform tools from the [official Android developer site](https://developer.android.com/studio/releases/platform-tools).  
-    - **MacOS:**  
-      ```bash
-      brew install android-platform-tools
-      ```  
-    - **Linux:**  
-      ```bash
-      sudo apt-get install android-tools-adb
-      ```  
+## 📋 Table of Contents
 
-### ➡️ Connect to the TV  
- 
+1. [Requirements](#requirements)
+2. [Preparation](#preparation)
+3. [Setting Up ADB](#setting-up-adb)
+4. [Identifying & Removing Bloatware](#identifying--removing-bloatware)
+5. [Customizing the Launcher](#customizing-the-launcher)
+6. [Optimizing System Performance](#optimizing-system-performance)
+7. [Troubleshooting & Reverting Changes](#troubleshooting--reverting-changes)
+
+---
+
+## 🔎 Requirements
+
+- Sony Bravia Android TV (tested on Android 9 Pie)
+- Active network connection (Wi-Fi or LAN)
+- Computer with ADB installed
+- Basic familiarity with command-line operations
+
+---
+
+## 🚀 Preparation
+
+### Enable Developer Options
+
+- Navigate to: `Settings → Device Preferences → About`
+- Tap `Build Number` **7 times** until it shows **Developer Mode Enabled**
+
+### Enable ADB Debugging
+
+- Navigate to: `Settings → Device Preferences → Developer Options`
+- Turn on **Network Debugging**
+
+---
+
+## 🌐 Setting Up ADB
+
+### Install ADB on your computer
+
+- **Windows:** Download [Android Platform Tools](https://developer.android.com/studio/releases/platform-tools)
+- **macOS:**
+  ```bash
+  brew install android-platform-tools
+  ```
+- **Linux:**
+  ```bash
+  sudo apt-get install android-tools-adb
+  ```
+
+### Connect to your TV via ADB
+
 ```bash
-adb connect <TV_IP>
+adb connect <TV_IP_ADDRESS>
 ```
 
-Now you are connected to your TV via ADB. We are not continuing to list installed apps. Below I curated a list of apps that can be safely removed without affecting the system. 
-### ➡️ List packages 
+### List installed apps
 
 ```bash
 adb shell pm list packages
 ```
+
 ---
 
+## 🔥 Identifying & Removing Bloatware
 
-### 🔥 Recommended Bloatware to Remove:
+Below are recommended apps to remove. Use the following command structure to uninstall apps safely:
+
+```bash
+adb shell pm uninstall --user 0 <package_name>
+```
+
 | App Name                                 | Package Name                                 | Purpose                                      |
 |------------------------------------------|----------------------------------------------|----------------------------------------------|
 | Sony Video Frame Server                 | `com.sony.dtv.videoframeserver`              | Frame rendering service                      |
@@ -157,7 +157,8 @@ adb shell pm list packages
 | Sony Select Overlay                     | `com.sony.dtv.sonyselect.overlay`              | Sony content overlay                        |
 
 
-### ➡️ Remove Bloatware
+## 🚫 Script for all apps above
+
 ```bash
 adb shell pm uninstall --user 0 com.sony.dtv.videoframeserver
 adb shell pm uninstall --user 0 com.android.dreams.basic
@@ -221,17 +222,12 @@ adb shell pm uninstall --user 0 com.google.android.webview
 adb shell pm uninstall --user 0 com.google.android.marvin.talkback
 adb shell pm uninstall --user 0 com.sony.dtv.sonyselect.overlay
 ```
+---
 
+## 🎨 Customizing the Launcher
 
-### ➡️ Disable apps 
-We want to just disable these apps so if we need them again we cant just enable them again without the need of a computer. 
-```bash
-adb shell pm disable-user --user 0 com.google.android.apps.mediashell
-adb shell pm disable-user --user 0 com.android.vending
-adb shell pm disable-user --user 0 com.google.android.gms
-```
+Disable unwanted tabs and content in your launcher:
 
-### Tweak the Launcher 
 ```bash
 adb shell settings put secure tv_home_shop_content_enabled 0
 adb shell settings put secure tv_home_personalized_ads_enabled 0
@@ -239,14 +235,18 @@ adb shell settings put secure tv_home_content_suggestions_enabled 0
 adb shell settings put secure tv_home_promotion_tile_enabled 0
 ```
 
-### ➡️ Clean Launcher Data 
-That our changes on the launcher take effect, we need to clear app data of the launcher. This will reset your launcher to the default state. 
+Clear the launcher data for changes to apply:
 
 ```bash
 adb shell pm clear com.google.android.tvlauncher
 ```
 
-### Improve overall performance 
+---
+
+## 🚀 Optimizing System Performance
+
+Apply these settings to enhance responsiveness:
+
 ```bash
 adb shell setprop persist.sys.input_lag 0
 adb shell settings put global game_mode 1
@@ -255,27 +255,29 @@ adb shell settings put global transition_animation_scale 0.5
 adb shell settings put global animator_duration_scale 0.5
 ```
 
+---
 
+## ⚙️ Troubleshooting & Reverting Changes
 
-## Troubleshooting and Reverting Changes
+### Reinstall apps
 
-### Reinstall any app 
 ```bash
 adb shell cmd package install-existing <package_name>
 ```
 
-### Activate any app 
+### Reactivate disabled apps
+
 ```bash
 adb shell pm enable <package_name>
 ```
 
-### I enabled play services and play store, now my launcher has more tabs again
-If you enabled Google Play Services, the launcher will fetch data from their servers making other tabs visible again. There should be no content, but it can be disturbing. You can clear the launcher data again to remove the tabs. You can do this by command line or by going to the settings of the launcher.
+### Issues after enabling Play Services
+
+Re-enabling Google Play Services may cause extra tabs to reappear. To revert:
 
 ```bash
 adb shell pm clear com.google.android.tvlauncher
 ```
-
 
 
 
