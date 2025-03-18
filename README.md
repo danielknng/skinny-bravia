@@ -180,11 +180,23 @@ adb shell settings put secure tv_home_content_suggestions_enabled 0
 adb shell settings put secure tv_home_promotion_tile_enabled 0
 ```
 
-### Improve overall performance 
+### Delete Launcher App Data 
 ```bash
-adb shell pm uninstall -k --user 0 com.google.android.gms
+adb shell pm clear com.google.android.tvlauncher
 ```
 
+### Improve overall performance 
+```bash
+adb shell setprop persist.sys.input_lag 0
+adb shell settings put global game_mode 1
+adb shell settings put global window_animation_scale 0.5
+adb shell settings put global transition_animation_scale 0.5
+adb shell settings put global animator_duration_scale 0.5
+```
+
+
+
+## Troubleshooting and Reverting Changes
 
 ### Reinstall any app 
 ```bash
