@@ -222,7 +222,20 @@ adb shell pm uninstall --user 0 com.google.android.webview
 adb shell pm uninstall --user 0 com.google.android.marvin.talkback
 adb shell pm uninstall --user 0 com.sony.dtv.sonyselect.overlay
 ```
----
+
+## ➡️ Disable apps 
+ 
+We just want to  disable these apps so if we need them again we cant just re-enable them without the need of a computer. 
+ 
+```bash
+ 
+adb shell pm disable-user --user 0 com.google.android.apps.mediashell
+ 
+adb shell pm disable-user --user 0 com.android.vending
+ 
+adb shell pm disable-user --user 0 com.google.android.gms
+ 
+```
 
 ## 🎨 Customizing the Launcher
 
