@@ -19,6 +19,9 @@ This guide will help you effectively remove unnecessary apps and services ("bloa
 - Reduced CPU and network usage
 - Ad-free and clutter-free launcher
 
+
+![My Local Image](./images/screenshot1.png "Example Image")
+![My Local Image](./images/screenshot.png "Example Image")
 ---
 
 ## 📋 Table of Contents
