@@ -14,10 +14,10 @@ This guide explains how to remove unnecessary background services and bloatware 
 
 ---
 ## 🏆 Benefits of Debloating  
-✔️ More available RAM → Faster app loading  
-✔️ Improved UI responsiveness  
-✔️ Less background activity → Reduced network and CPU load  
-✔️ Customized launcher without ads or unnecessary content  
+- ✔️ More available RAM → Faster app loading  
+- ✔️ Improved UI responsiveness  
+- ✔️ Less background activity → Reduced network and CPU load  
+- ✔️ Customized launcher without ads or unnecessary content  
 ---
 
 ## 🔎 Device Requirements  
