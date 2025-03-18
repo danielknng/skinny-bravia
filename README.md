@@ -1,5 +1,6 @@
 # 🛠️ Sony Bravia TV Debloating & Performance Optimization  
-*This guide will massively debloat your Sony Bravia TV! After debloatig you can use all installed apps, but you wont be able to watch normal television, use Accessibility options and some other functions. Please refer to the table below to make sure you wont disable functions you need. *  
+*This guide will significantly debloat your Sony Bravia TV. After debloating, you'll still be able to use your installed apps, but some functionalities such as regular TV channels, accessibility options, and certain system features may be affected. Refer carefully to the provided tables to avoid disabling essential functions.*  
+
 
 ---
 
@@ -89,8 +90,6 @@ adb shell pm list packages
 ```
 ---
 
-## 
-
 
 ### 🔥 Recommended Bloatware to Remove:
 | App Name                                 | Package Name                                 | Purpose                                      |
@@ -156,8 +155,6 @@ adb shell pm list packages
 | Google Webview                          | `com.google.android.webview`                   | Web rendering engine                        |
 | Google Talkback                         | `com.google.android.marvin.talkback`            | Accessibility service                       |
 | Sony Select Overlay                     | `com.sony.dtv.sonyselect.overlay`              | Sony content overlay                        |
-
-
 
 
 ### ➡️ Remove Bloatware
@@ -234,12 +231,7 @@ adb shell pm disable-user --user 0 com.android.vending
 adb shell pm disable-user --user 0 com.google.android.gms
 ```
 
-### ➡️ Clean Launcher Data 
-```bash
-adb shell pm clear com.google.android.tvlauncher
-```
-
-### Tweak the Launcher (Optional, may not have an effect)
+### Tweak the Launcher 
 ```bash
 adb shell settings put secure tv_home_shop_content_enabled 0
 adb shell settings put secure tv_home_personalized_ads_enabled 0
@@ -247,7 +239,9 @@ adb shell settings put secure tv_home_content_suggestions_enabled 0
 adb shell settings put secure tv_home_promotion_tile_enabled 0
 ```
 
-### Delete Launcher App Data 
+### ➡️ Clean Launcher Data 
+That our changes on the launcher take effect, we need to clear app data of the launcher. This will reset your launcher to the default state. 
+
 ```bash
 adb shell pm clear com.google.android.tvlauncher
 ```
@@ -275,7 +269,7 @@ adb shell cmd package install-existing <package_name>
 adb shell pm enable <package_name>
 ```
 
-### I enabled play services, now my launcher has more tabs again
+### I enabled play services and play store, now my launcher has more tabs again
 If you enabled Google Play Services, the launcher will fetch data from their servers making other tabs visible again. There should be no content, but it can be disturbing. You can clear the launcher data again to remove the tabs. You can do this by command line or by going to the settings of the launcher.
 
 ```bash
