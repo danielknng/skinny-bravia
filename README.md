@@ -123,7 +123,6 @@ adb shell pm uninstall --user 0 <package_name>
 | Sony BraviaSync Setting     | `com.sony.dtv.braviasyncsetting`     | Bravia Sync configuration |
 | Sony BraviaSync Service     | `com.sony.dtv.braviasyncservice`     | Bravia Sync service       |
 | Sony Browser WebApp Runtime | `com.sony.dtv.browser.webappruntime` | Web app execution service |
-| Sony DA Service             | `com.sony.dtv.da.service`            | Remote support            |
 | RS232 Support               | `com.sony.dtv.b2b.rs232csupport`     | RS232 support             |
 | B2B service                 | `com.sony.dtv.b2b.vendorprotocol`    | Unknown b2b service       |
 | PiP service                 | `com.sony.dtv.seconddispsetting`     | PiP Service (TV)          |
@@ -145,6 +144,7 @@ adb shell pm uninstall --user 0 <package_name>
 | Sony Bug Report System         | `com.sony.dtv.sonybugreportsys`       | Bug report service       |
 | Sony Crash Report System       | `com.sony.dtv.system.crashlog`        | Crash report service     |
 | Sony Customer Support          | `com.sony.dtv.customersupport`        | Customer support service |
+| Sony DA Service                | `com.sony.dtv.da.service`             | Remote support           |
 
 ### Sony Applications
 
