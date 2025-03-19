@@ -97,28 +97,24 @@ adb shell pm uninstall --user 0 <package_name>
 
 ### Sony Bloatware
 
-| App Name                       | Package Name                          | Purpose                           |
-| ------------------------------ | ------------------------------------- | --------------------------------- |
-| Sony Video Frame Server        | `com.sony.dtv.videoframeserver`       | Frame rendering service           |
-| Sony Demo Mode                 | `com.sony.dtv.demomode`               | TV demo mode                      |
-| Sony HbbTV Launcher            | `com.sony.dtv.hbbtvlauncher`          | HbbTV interface                   |
-| Sony iManual                   | `com.sony.dtv.imanual`                | TV user manual                    |
-| Sony Smart Help                | `com.sony.dtv.smarthelp`              | Smart help service                |
-| Sony Reminder Service          | `com.sony.dtv.reminderservice`        | TV reminder service               |
-| Sony Log Level Settings Vendor | `com.sony.dtv.sonyloglevelsettingvnd` | Vendor logging settings           |
-| Sony Log Level Settings System | `com.sony.dtv.sonyloglevelsettingsys` | System logging settings           |
-| Sony Bug Report System         | `com.sony.dtv.sonybugreportsys`       | Bug report service                |
-| Sony Discovery                 | `com.sony.dtv.discovery`              | Content recommendation            |
-| Sony YouView                   | `com.sony.dtv.youview`                | TV content aggregation            |
-| YouView Service Host           | `com.youview.tv.servicehost`          | Host for YouView service          |
-| Sony Customer Support          | `com.sony.dtv.customersupport`        | Customer support service          |
-| Sony Multi-Screen Demo         | `com.sony.dtv.multiscreendemo`        | Multi-screen demo                 |
-| Sony Demo Support              | `com.sony.dtv.demosupport`            | Support for demo mode             |
-| Sony Home Network              | `com.sony.dtv.homenetwork`            | Home network service              |
-| Sony Interactive TV Utility    | `com.sony.dtv.interactivetvutil`      | Interactive TV service            |
-| Sony Select                    | `com.sony.dtv.sonyselect`             | Sony content store                |
-| Sony Select Overlay            | `com.sony.dtv.sonyselect.overlay`     | Sony content overlay              |
-| Samba TV                       | `tv.samba.ssm`                        | TV content recommendation service |
+| App Name                    | Package Name                      | Purpose                           |
+| --------------------------- | --------------------------------- | --------------------------------- |
+| Sony Video Frame Server     | `com.sony.dtv.videoframeserver`   | Frame rendering service           |
+| Sony Demo Mode              | `com.sony.dtv.demomode`           | TV demo mode                      |
+| Sony HbbTV Launcher         | `com.sony.dtv.hbbtvlauncher`      | HbbTV interface                   |
+| Sony iManual                | `com.sony.dtv.imanual`            | TV user manual                    |
+| Sony Smart Help             | `com.sony.dtv.smarthelp`          | Smart help service                |
+| Sony Reminder Service       | `com.sony.dtv.reminderservice`    | TV reminder service               |
+| Sony Discovery              | `com.sony.dtv.discovery`          | Content recommendation            |
+| Sony YouView                | `com.sony.dtv.youview`            | TV content aggregation            |
+| YouView Service Host        | `com.youview.tv.servicehost`      | Host for YouView service          |
+| Sony Multi-Screen Demo      | `com.sony.dtv.multiscreendemo`    | Multi-screen demo                 |
+| Sony Demo Support           | `com.sony.dtv.demosupport`        | Support for demo mode             |
+| Sony Home Network           | `com.sony.dtv.homenetwork`        | Home network service              |
+| Sony Interactive TV Utility | `com.sony.dtv.interactivetvutil`  | Interactive TV service            |
+| Sony Select                 | `com.sony.dtv.sonyselect`         | Sony content store                |
+| Sony Select Overlay         | `com.sony.dtv.sonyselect.overlay` | Sony content overlay              |
+| Samba TV                    | `tv.samba.ssm`                    | TV content recommendation service |
 
 ### Sony System Services
 
@@ -128,6 +124,9 @@ adb shell pm uninstall --user 0 <package_name>
 | Sony BraviaSync Service     | `com.sony.dtv.braviasyncservice`     | Bravia Sync service       |
 | Sony Browser WebApp Runtime | `com.sony.dtv.browser.webappruntime` | Web app execution service |
 | Sony DA Service             | `com.sony.dtv.da.service`            | Remote support            |
+| RS232 Support               | `com.sony.dtv.b2b.rs232csupport`     | RS232 support             |
+| B2B service                 | `com.sony.dtv.b2b.vendorprotocol`    | Unknown b2b service       |
+| PiP service                 | `com.sony.dtv.seconddispsetting`     | PiP Service (TV)          |
 
 ### Sony Enhanced Services
 
@@ -136,6 +135,16 @@ adb shell pm uninstall --user 0 <package_name>
 | Sony Pro Settings | `com.sony.dtv.b2b.prosettings` | PRO settings           |
 | Sony Hotel Mode   | `com.sony.dtv.b2b.hotelmode`   | PRO mode/ Hotel mode   |
 | Sony Service Mode | `com.sony.dtv.servicemode`     | Developer service mode |
+
+### Sony Diagnostics Services
+
+| App Name                       | Package Name                          | Purpose                  |
+| ------------------------------ | ------------------------------------- | ------------------------ |
+| Sony Log Level Settings Vendor | `com.sony.dtv.sonyloglevelsettingvnd` | Vendor logging settings  |
+| Sony Log Level Settings System | `com.sony.dtv.sonyloglevelsettingsys` | System logging settings  |
+| Sony Bug Report System         | `com.sony.dtv.sonybugreportsys`       | Bug report service       |
+| Sony Crash Report System       | `com.sony.dtv.system.crashlog`        | Crash report service     |
+| Sony Customer Support          | `com.sony.dtv.customersupport`        | Customer support service |
 
 ### Sony Applications
 
@@ -266,6 +275,12 @@ adb shell pm uninstall --user 0 com.google.android.tvrecommendations
 adb shell pm uninstall --user 0 com.google.android.webview
 adb shell pm uninstall --user 0 com.google.android.marvin.talkback
 adb shell pm uninstall --user 0 com.sony.dtv.sonyselect.overlay
+adb shell pm uninstall --user 0 com.google.android.partnersetup
+adb shell pm uninstall --user 0 com.sony.dtv.system.crashlog
+adb shell pm uninstall --user 0 com.sony.dtv.b2b.rs232csupport
+adb shell pm uninstall --user 0 com.sony.dtv.b2b.vendorprotocol
+adb shell pm uninstall --user 0 com.sony.dtv.seconddispsetting
+adb shell pm uninstall --user 0 com.android.wallpaperbackup
 ```
 
 ## ➡️ Disable apps
