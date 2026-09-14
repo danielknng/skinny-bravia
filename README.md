@@ -50,12 +50,12 @@ This guide will help you effectively remove unnecessary apps and services ("bloa
 ### Enable Developer Options
 
 - Navigate to: `Settings → Device Preferences → About`
-- Tap `Build Number` **7 times** until it shows **Developer Mode Enabled**
+- Tap `Build Number` (on some models it is instead called `Android TV OS build`) **7 times** until it shows **Developer Mode Enabled**
 
 ### Enable ADB Debugging
 
-- Navigate to: `Settings → Device Preferences → Developer Options`
-- Turn on **Network Debugging**
+- Navigate to: `Settings → Device Preferences → Developer Options` (On some models it's `Settings → System → Developer Options` instead).
+- Turn on **Network Debugging** (or simply `ADB debugging` if you don't see that option).
 
 ---
 
